@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "WorkOrderCreatedEvent",
+  "namespace": "com.yazzzeh04.ms.workorder_service.event",
+  "fields": [
+    { "name": "workOrderNumber", "type": "string" },
+    { "name": "serialNumber", "type": "string" },
+    { "name": "type", "type": "string" },
+    { "name": "technicianEmail", "type": "string" }
+  ]
+}
