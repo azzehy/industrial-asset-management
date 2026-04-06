@@ -1,0 +1,67 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: api-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/spring-microservices-security-realm
+machine:
+  service:
+    url: http://localhost:8080/
+machineavailability:
+  service:
+    url: http://localhost:8082/
+workorder:
+  service:
+    url: http://localhost:8081/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls[0]:
+      name: Machine Service
+      url: /aggregate/machine-service/v3/api-docs
+
+# Actuator Endpoints
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+#Resilinece4j Properties
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        minimum-number-of-calls: 5
+  #Resilience4J Timeout Properties
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 3s
+  #Resilience4J Retry Properties
+  retry:
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration: 2s
