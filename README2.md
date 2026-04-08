@@ -1,8 +1,6 @@
 # Industrial Asset Management Platform
 
-**Industrial Asset Management Platform — Logo**  
-*(Add your project logo image here.)*
-
+![Industrial asset management platform logo.png](Frontend/screenshots/Industrial%20asset%20management%20platform%20logo.png)
 The **Industrial Asset Management Platform** is a microservices-based system for tracking **industrial machines**, **availability**, and **maintenance work orders**. It is designed for teams that need a central catalog of assets, scheduling of inspections or tasks, and **event-driven notifications** when work orders are created. The web experience combines secure sign-in with dashboards to register machines, view the fleet, and place work orders tied to the signed-in technician.
 
 ---
@@ -15,11 +13,9 @@ The **Industrial Asset Management Platform** is a microservices-based system for
 - [🔙 Backend](#backend)
 - [🚀 Getting Started](#getting-started)
 - [✨ Features](#features)
-- [🎬 App Demo Video](#app-demo-video)
 - [🤝 Contributing](#contributing)
 - [👩‍💻 Contributors](#contributors)
 - [🌟 Future Enhancements](#future-enhancements)
-- [📜 License](#license)
 
 ---
 
@@ -218,8 +214,8 @@ volumes:
 **1. Clone the repository**
 
 ```bash
-git clone <your-repository-url>
-cd "Industrial Asset Management platform"
+git clone https://github.com/azzehy/industrial-asset-management.git
+cd "industrial-asset-management"
 ```
 
 **2. Start infrastructure** (from each folder as needed; fix any typos in env vars in existing compose files, e.g. `MYSQL_ROOT_PASSWORD`)
@@ -268,16 +264,6 @@ Open **http://localhost:4200/** and sign in through Keycloak using a realm and c
 - **Service discovery** — Eureka for registering microservices.  
 - **Unified API entry** — Spring Cloud Gateway with JWT security and fallback responses when downstream services fail.  
 - **Observability-ready** — Prometheus metrics on several services; sample Grafana/Prometheus/Loki/Tempo via gateway Docker Compose.
-
----
-
-<a id="app-demo-video"></a>
-
-## 🎬 App Demo Video
-
-Add a link to your **demo or walkthrough video** here (e.g. YouTube or Loom).
-
-**Screenshots:** see `Frontend/screenshots/` and `Frontend/README.md`.
 
 ---
 
