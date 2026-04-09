@@ -1,0 +1,165 @@
+<!-- <div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Register Machine</h2>
+  @if (machineCreated) {
+    <h4 class="text-green-500">Machine Created Successfully</h4>
+  }
+  <form [formGroup]="registerMachineForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label class="block text-gray-700" for="serielNumber">Seriel Number</label>
+      <input
+        type="text"
+        id="serielserielNumber"
+        formControlName="serielNumber"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="serialNumber?.invalid && (serialNumber?.dirty || serialNumber?.touched)" class="text-red-500">
+        <div *ngIf="serialNumber?.errors?.['required']">Serial Number is required.</div>
+      </div>
+    </div>
+
+     <div class="mb-4">
+      <label class="block text-gray-700" for="model">Model</label>
+      <input
+        type="text"
+        id="model"
+        formControlName="model"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="model?.invalid && (model?.dirty || model?.touched)" class="text-red-500">
+        <div *ngIf="model?.errors?.['required']">Model is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="description">Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      ></textarea>
+      <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="text-red-500">
+        <div *ngIf="description?.errors?.['required']">Description is required.</div>
+        <div *ngIf="description?.errors?.['minlength']">Description must be at least 10 characters long.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="price">Price</label>
+      <input
+        type="number"
+        id="price"
+        formControlName="price"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="price?.invalid && (price?.dirty || price?.touched)" class="text-red-500">
+        <div *ngIf="price?.errors?.['required']">Price is required.</div>
+        <div *ngIf="price?.errors?.['min']">Price must be greater than 0.</div>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+      [disabled]="addProductForm.invalid"
+    >
+      Add Product
+    </button>
+  </form>
+</div> -->
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Register Machine</h2>
+
+  @if (machineCreated) {
+    <h4 class="text-green-500">Machine Registered Successfully</h4>
+  }
+
+  <form [formGroup]="registerMachineForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="serialNumber">Serial Number</label>
+      <input
+        type="text"
+        id="serialNumber"
+        formControlName="serialNumber"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="serialNumber?.invalid && (serialNumber?.dirty || serialNumber?.touched)" class="text-red-500">
+        <div *ngIf="serialNumber?.errors?.['required']">Serial Number is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="model">Model</label>
+      <input
+        type="text"
+        id="model"
+        formControlName="model"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="model?.invalid && (model?.dirty || model?.touched)" class="text-red-500">
+        <div *ngIf="model?.errors?.['required']">Model is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="manufacturer">Manufacturer</label>
+      <input
+        type="text"
+        id="manufacturer"
+        formControlName="manufacturer"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="manufacturer?.invalid && (manufacturer?.dirty || manufacturer?.touched)" class="text-red-500">
+        <div *ngIf="manufacturer?.errors?.['required']">Manufacturer is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="type">Machine Type</label>
+      <input
+        type="text"
+        id="type"
+        formControlName="type"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="type?.invalid && (type?.dirty || type?.touched)" class="text-red-500">
+        <div *ngIf="type?.errors?.['required']">Machine type is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="vesselOrLocation">Vessel / Location</label>
+      <input
+        type="text"
+        id="vesselOrLocation"
+        formControlName="vesselOrLocation"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="vesselOrLocation?.invalid && (vesselOrLocation?.dirty || vesselOrLocation?.touched)" class="text-red-500">
+        <div *ngIf="vesselOrLocation?.errors?.['required']">Location is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700" for="installationDate">Installation Date</label>
+      <input
+        type="date"
+        id="installationDate"
+        formControlName="installationDate"
+        class="border rounded w-full py-2 px-3 text-gray-700"
+      />
+      <div *ngIf="installationDate?.invalid && (installationDate?.dirty || installationDate?.touched)" class="text-red-500">
+        <div *ngIf="installationDate?.errors?.['required']">Installation date is required.</div>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+      [disabled]="registerMachineForm.invalid"
+    >
+      Register Machine
+    </button>
+
+  </form>
+</div>
