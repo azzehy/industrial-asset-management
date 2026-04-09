@@ -1,0 +1,61 @@
+<main>
+  <div class="p-4">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold mb-4">Machins ({{ machines.length }})</h1>
+      @if (isAuthenticated) {
+        <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 ml-4"
+                (click)="goToRegisterMachinePage()">
+          Register Machine
+        </button>
+      }
+    </div>
+    @if (machines.length > 0) {
+      @if (workOrderSuccess) {
+        <h4 class="text-green-500 font-bold">Order Placed Successfully</h4>
+      } @else if (workOrderFailed) {
+        <h4 class="text-red-500 font-bold">Order Failed, please try again later</h4>
+        <!-- @if(quantityIsNull) {
+          <h4 class="text-red-500 font-bold">Quantity cannot be null</h4>
+        } -->
+      }
+      <ul class="list-disc list-inside">
+        @for (machine of machines; track machine.id) {
+          <li class="mb-2 p-4 bg-gray-100 rounded-lg shadow-sm flex justify-between items-center">
+            <div>
+              <div>
+        <span class="font-semibold">{{ machine.model }}</span>
+        <br>
+
+        <span class="text-gray-600">
+          Serial Number: {{ machine.serialNumber }}
+        </span>
+
+        <br>
+
+        <span>
+          Manufacturer: {{ machine.manufacturer }}
+        </span>
+
+        <br>
+
+        <span>
+          Location: {{ machine.vesselOrLocation }}
+        </span>
+      </div>
+            </div>
+            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 ml-4"
+                    (click)="scheduleWorkOrder(machine)">
+              Schedule Work Order
+            </button>
+          </li>
+        }
+      </ul>
+    } @else if (machines.length === 100) {
+      <span class="text-sm text-gray-700">
+      Click <a class="text-blue-500 hover:underline cursor-pointer">Load More</a> to see more machines
+    </span>
+    } @else {
+      <p class="text-red-500 font-semibold">No machines found!</p>
+    }
+  </div>
+</main>
