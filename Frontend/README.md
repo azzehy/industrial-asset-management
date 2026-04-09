@@ -10,10 +10,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Home Page
 
-![img.png](screenshots/img.png)
+![img.png](screenshots/front.png)
 
-Add Product page
+Grafana Template
 
-![img_1.png](screenshots/img_1.png)
+![img_1.png](screenshots/grafana.png)
 
-Refer to the detailed guide to setup the application along with Keycloak - https://programmingtechie.com/2024/06/09/spring-boot-microservices-tutorial-part-7/
